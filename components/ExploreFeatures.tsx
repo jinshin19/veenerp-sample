@@ -1,84 +1,67 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
 import { Zap, BarChart2, Plug, Building2 } from "lucide-react";
 
 const features = [
   {
     icon: Zap,
-    label: "Automation",
-    color: "#f59e0b",
+    label: "Workflow Automation",
+    color: "#d97706",
     bg: "bg-amber-50",
-    points: [
-      "Trigger-based workflow rules",
-      "Auto-generate invoices & POs",
-      "Scheduled reports & alerts",
-      "Multi-step approval flows",
-    ],
-    highlight: "Save 20+ hours per week",
-    highlightBg: "bg-amber-50",
-    highlightColor: "text-amber-600",
+    border: "border-amber-100",
+    accent: "#d97706",
+    points: ["Trigger-based workflow rules", "Auto-generate invoices & POs", "Scheduled reports & alerts", "Multi-step ERP approval flows"],
+    badge: "Save 20+ hrs/week",
+    badgeBg: "bg-amber-50 text-amber-700",
   },
   {
     icon: BarChart2,
     label: "Reporting & Analytics",
-    color: "#5b5ef4",
-    bg: "bg-[#eeeeff]",
-    points: [
-      "Live financial dashboards",
-      "Custom report builder",
-      "KPI tracking & alerts",
-      "Export to Excel / PDF",
-    ],
-    highlight: "99.9% data accuracy",
-    highlightBg: "bg-[#eeeeff]",
-    highlightColor: "text-[#5b5ef4]",
+    color: "#4f46e5",
+    bg: "bg-indigo-50",
+    border: "border-indigo-100",
+    accent: "#4f46e5",
+    points: ["Live financial dashboards", "Drag-and-drop report builder", "KPI tracking & threshold alerts", "Export to Excel or PDF"],
+    badge: "99.9% data accuracy",
+    badgeBg: "bg-indigo-50 text-indigo-700",
   },
   {
     icon: Plug,
-    label: "Integrations",
-    color: "#10b981",
+    label: "Native Integrations",
+    color: "#059669",
     bg: "bg-emerald-50",
-    points: [
-      "REST API & webhooks",
-      "Payment gateways",
-      "E-commerce platforms",
-      "Shipping & logistics",
-    ],
-    highlight: "50+ native integrations",
-    highlightBg: "bg-emerald-50",
-    highlightColor: "text-emerald-600",
+    border: "border-emerald-100",
+    accent: "#059669",
+    points: ["REST API & webhooks", "Payment gateway connections", "E-commerce platform sync", "Shipping & logistics partners"],
+    badge: "50+ integrations",
+    badgeBg: "bg-emerald-50 text-emerald-700",
   },
   {
     icon: Building2,
-    label: "Multi-Company",
-    color: "#8b5cf6",
+    label: "Multi-Company Support",
+    color: "#7c3aed",
     bg: "bg-violet-50",
-    points: [
-      "Manage multiple entities",
-      "Consolidated reporting",
-      "Shared master data",
-      "Inter-company transactions",
-    ],
-    highlight: "Unlimited subsidiaries",
-    highlightBg: "bg-violet-50",
-    highlightColor: "text-violet-600",
+    border: "border-violet-100",
+    accent: "#7c3aed",
+    points: ["Manage multiple legal entities", "Consolidated group reporting", "Shared master data pools", "Inter-company transactions"],
+    badge: "Unlimited subsidiaries",
+    badgeBg: "bg-violet-50 text-violet-700",
   },
 ];
 
 export default function ExploreFeatures() {
   return (
     <section className="section-padding bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-3 mb-12">
-          <Badge className="rounded-full px-3 py-1 text-[0.7rem] font-semibold text-[#5b5ef4] bg-[#eeeeff] border-0 shadow-none">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="text-center mb-12 space-y-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold tracking-wide">
             Platform Features
-          </Badge>
-          <h2 className="text-3xl sm:text-[2.25rem] font-bold text-foreground tracking-tight">
+          </div>
+          <h2 className="text-[2rem] sm:text-[2.25rem] font-bold text-slate-900 tracking-tight">
             Powerful features,
             <br className="hidden sm:block" /> built for scale
           </h2>
-          <p className="text-sm text-muted-foreground max-w-xl mx-auto leading-relaxed">
+          <p className="text-[0.9375rem] text-slate-500 max-w-lg mx-auto leading-relaxed">
             Everything you need to automate, analyze, integrate, and grow — without compromising on simplicity.
           </p>
         </div>
@@ -89,26 +72,26 @@ export default function ExploreFeatures() {
             return (
               <div
                 key={f.label}
-                className="group relative bg-white rounded-2xl border border-border/60 p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 overflow-hidden"
+                className="group relative bg-white rounded-xl border border-slate-200 p-5 shadow-sm card-hover overflow-hidden"
               >
                 <div
-                  className="absolute inset-x-0 top-0 h-[2px] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-x-0 top-0 h-[3px] rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{ background: f.color }}
                 />
-                <div className={`w-9 h-9 rounded-xl ${f.bg} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-200`}>
-                  <Icon className="w-4 h-4" style={{ color: f.color }} />
+                <div className={`w-10 h-10 rounded-xl ${f.bg} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-200`}>
+                  <Icon className="w-5 h-5" style={{ color: f.color }} />
                 </div>
-                <h3 className="text-sm font-bold text-foreground mb-3">{f.label}</h3>
+                <h3 className="text-[0.9375rem] font-semibold text-slate-900 mb-3">{f.label}</h3>
                 <ul className="space-y-2 mb-4">
                   {f.points.map((pt) => (
-                    <li key={pt} className="flex items-start gap-2 text-xs text-muted-foreground">
-                      <div className="w-1 h-1 rounded-full mt-1.5 shrink-0" style={{ background: f.color }} />
+                    <li key={pt} className="flex items-start gap-2 text-sm text-slate-500">
+                      <div className="w-1.5 h-1.5 rounded-full mt-[5px] shrink-0" style={{ background: f.color }} />
                       {pt}
                     </li>
                   ))}
                 </ul>
-                <span className={`inline-flex text-[10px] font-semibold px-2.5 py-1 rounded-lg ${f.highlightBg} ${f.highlightColor}`}>
-                  {f.highlight}
+                <span className={`inline-flex text-[11px] font-semibold px-2.5 py-1 rounded-lg border ${f.badgeBg} ${f.border}`}>
+                  {f.badge}
                 </span>
               </div>
             );

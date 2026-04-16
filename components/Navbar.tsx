@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Zap } from "lucide-react";
 
@@ -31,65 +30,62 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-xl border-b border-border/60 shadow-sm"
-          : "bg-transparent"
+        scrolled ? "glass-nav border-b border-slate-200/60 shadow-sm" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14">
-          <a href="#" className="flex items-center gap-2 group shrink-0">
-            <div className="w-7 h-7 rounded-lg bg-[#5b5ef4] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
-              <Zap className="w-3.5 h-3.5 text-white fill-white" />
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="flex items-center justify-between h-16">
+          <a href="#" className="flex items-center gap-2.5 group shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center transition-transform duration-200 group-hover:scale-105 shadow-sm shadow-indigo-200">
+              <Zap className="w-4 h-4 text-white fill-white" />
             </div>
-            <span className="text-[0.95rem] font-bold tracking-tight">
-              veen<span className="text-[#5b5ef4]">ERP</span>
+            <span className="text-[1rem] font-bold tracking-tight text-slate-900">
+              veen<span className="text-indigo-600">ERP</span>
             </span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-0.5">
+          <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className="px-3.5 py-1.5 text-[0.8125rem] font-medium text-muted-foreground hover:text-foreground transition-colors duration-150 rounded-md hover:bg-black/[0.04]"
+                className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors duration-150 rounded-lg"
               >
                 {link.label}
               </button>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-4">
             <button
               onClick={() => scrollTo("#tour")}
-              className="text-[0.8125rem] font-medium text-muted-foreground hover:text-foreground transition-colors duration-150"
+              className="text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors duration-150"
             >
               Sign In
             </button>
-            <Button
+            <button
               onClick={() => scrollTo("#tour")}
-              size="sm"
-              className="bg-[#5b5ef4] hover:bg-[#4547d4] text-white rounded-lg px-4 h-8 text-[0.8125rem] font-semibold shadow-none transition-all duration-150 hover:shadow-md hover:shadow-[#5b5ef4]/20"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg shadow-sm shadow-indigo-200 transition-all duration-150 hover:shadow-md hover:shadow-indigo-200"
             >
               Book a Demo
-            </Button>
+            </button>
           </div>
 
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger
               aria-label="Open menu"
-              className="md:hidden inline-flex items-center justify-center w-8 h-8 rounded-md text-muted-foreground hover:bg-black/[0.04] hover:text-foreground transition-colors"
+              className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors"
             >
-              <Menu className="h-4.5 w-4.5" />
+              <Menu className="h-5 w-5" />
             </SheetTrigger>
-            <SheetContent side="right" className="w-64 p-0">
+            <SheetContent side="right" className="w-64 p-0 border-slate-200">
               <div className="flex flex-col h-full p-5 gap-6">
-                <a href="#" className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg bg-[#5b5ef4] flex items-center justify-center">
-                    <Zap className="w-3.5 h-3.5 text-white fill-white" />
+                <a href="#" className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center">
+                    <Zap className="w-4 h-4 text-white fill-white" />
                   </div>
-                  <span className="text-sm font-bold">
-                    veen<span className="text-[#5b5ef4]">ERP</span>
+                  <span className="text-sm font-bold text-slate-900">
+                    veen<span className="text-indigo-600">ERP</span>
                   </span>
                 </a>
                 <nav className="flex flex-col gap-0.5">
@@ -97,18 +93,18 @@ export default function Navbar() {
                     <button
                       key={link.href}
                       onClick={() => scrollTo(link.href)}
-                      className="text-left px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-black/[0.04] rounded-md transition-colors"
+                      className="text-left px-3 py-2.5 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
                     >
                       {link.label}
                     </button>
                   ))}
                 </nav>
-                <Button
+                <button
                   onClick={() => scrollTo("#tour")}
-                  className="w-full bg-[#5b5ef4] hover:bg-[#4547d4] text-white rounded-lg text-sm font-semibold"
+                  className="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg transition-colors"
                 >
                   Book a Demo
-                </Button>
+                </button>
               </div>
             </SheetContent>
           </Sheet>

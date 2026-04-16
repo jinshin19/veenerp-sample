@@ -1,69 +1,74 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
 import { Layers, Zap, BarChart2, Rocket } from "lucide-react";
 
 const reasons = [
   {
     icon: Layers,
     title: "Centralized Operations",
-    description: "Eliminate data silos. Every department works from a single source of truth, reducing errors and improving collaboration.",
-    color: "#5b5ef4",
-    bg: "bg-[#eeeeff]",
+    description: "Eliminate data silos. Every department — finance, sales, HR, warehouse — works from a single source of truth, reducing errors and improving collaboration.",
+    color: "#4f46e5",
+    bgClass: "bg-indigo-50",
+    textClass: "text-indigo-600",
   },
   {
     icon: Zap,
     title: "Automate Everything",
-    description: "From invoice generation to payroll runs and reorder alerts — veenERP automates repetitive tasks so your team can focus on what matters.",
-    color: "#f59e0b",
-    bg: "bg-amber-50",
+    description: "From invoice generation to payroll and reorder alerts — veenERP automates repetitive tasks so your team can focus on what moves the business forward.",
+    color: "#d97706",
+    bgClass: "bg-amber-50",
+    textClass: "text-amber-600",
   },
   {
     icon: BarChart2,
     title: "Real-Time Insights",
-    description: "Dashboards, reports, and KPIs update instantly across all modules — no waiting, no guesswork, no spreadsheets.",
-    color: "#10b981",
-    bg: "bg-emerald-50",
+    description: "Dashboards, reports, and KPIs update instantly across all modules — no waiting, no guesswork, no reconciling spreadsheets at end of month.",
+    color: "#059669",
+    bgClass: "bg-emerald-50",
+    textClass: "text-emerald-600",
   },
   {
     icon: Rocket,
     title: "Built to Scale",
-    description: "Whether you have 5 employees or 5,000, veenERP grows with you. Add modules, companies, and users without limits.",
-    color: "#8b5cf6",
-    bg: "bg-violet-50",
+    description: "Whether you have 5 employees or 5,000, veenERP grows with you. Add modules, companies, and users without changing your core system.",
+    color: "#7c3aed",
+    bgClass: "bg-violet-50",
+    textClass: "text-violet-600",
   },
+];
+
+const stats = [
+  { value: "12+", label: "Tools replaced" },
+  { value: "20 hrs", label: "Saved per week" },
+  { value: "99.9%", label: "Data accuracy" },
+  { value: "< 2 wks", label: "Setup time" },
 ];
 
 export default function WhyVeenERP() {
   return (
     <section id="solutions" className="section-padding bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-center">
-          <div className="space-y-6">
-            <Badge className="rounded-full px-3 py-1 text-[0.7rem] font-semibold text-[#5b5ef4] bg-[#eeeeff] border-0 shadow-none">
-              Why veenERP
-            </Badge>
-            <div className="space-y-3">
-              <h2 className="text-3xl sm:text-[2.25rem] font-bold text-foreground tracking-tight leading-[1.15]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center">
+          <div className="space-y-8">
+            <div className="space-y-1">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold tracking-wide mb-4">
+                Why veenERP
+              </div>
+              <h2 className="text-[2rem] sm:text-[2.25rem] font-bold text-slate-900 tracking-tight leading-[1.15]">
                 Stop managing chaos.
                 <br />
                 <span className="text-gradient">Start running smart.</span>
               </h2>
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
-                Most businesses lose hours every week reconciling data across disconnected tools. veenERP replaces the patchwork with one unified platform that just works.
+              <p className="text-[0.9375rem] text-slate-500 leading-relaxed max-w-md pt-2">
+                Most businesses lose hours every week reconciling data across disconnected tools. veenERP replaces the patchwork with one unified platform that works the way your business does.
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
-              {[
-                { label: "Tools replaced", value: "12+" },
-                { label: "Time saved / week", value: "20 hrs" },
-                { label: "Data accuracy", value: "99.9%" },
-                { label: "Setup time", value: "< 2 weeks" },
-              ].map((s) => (
-                <div key={s.label} className="bg-[#f7f7fb] rounded-xl p-4 border border-border/50">
-                  <p className="text-xl font-bold text-[#5b5ef4]">{s.value}</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">{s.label}</p>
+              {stats.map((s) => (
+                <div key={s.label} className="bg-slate-50 rounded-xl p-5 border border-slate-100">
+                  <p className="text-2xl font-extrabold text-indigo-600 tracking-tight">{s.value}</p>
+                  <p className="text-sm text-slate-500 mt-1">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -75,13 +80,13 @@ export default function WhyVeenERP() {
               return (
                 <div
                   key={r.title}
-                  className="bg-white rounded-2xl border border-border/60 p-5 shadow-sm hover:shadow-md hover:-translate-y-px transition-all duration-200 group"
+                  className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm card-hover"
                 >
-                  <div className={`w-9 h-9 rounded-xl ${r.bg} flex items-center justify-center mb-3.5 group-hover:scale-105 transition-transform duration-200`}>
-                    <Icon className="w-4 h-4" style={{ color: r.color }} />
+                  <div className={`w-10 h-10 rounded-xl ${r.bgClass} flex items-center justify-center mb-4`}>
+                    <Icon className="w-5 h-5" style={{ color: r.color }} />
                   </div>
-                  <h3 className="text-sm font-bold text-foreground mb-1.5">{r.title}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{r.description}</p>
+                  <h3 className="text-[0.9375rem] font-semibold text-slate-900 mb-2">{r.title}</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">{r.description}</p>
                 </div>
               );
             })}
