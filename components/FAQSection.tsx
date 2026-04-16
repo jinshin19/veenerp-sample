@@ -37,7 +37,7 @@ export default function FAQSection() {
     <section id="faq" className="section-padding bg-slate-50">
       <div className="max-w-2xl mx-auto px-5 sm:px-8">
         <div className="text-center mb-12 space-y-4">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold tracking-wide">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold tracking-wide">
             FAQ
           </div>
           <h2 className="text-[2rem] sm:text-[2.25rem] font-bold text-slate-900 tracking-tight">Common questions</h2>
@@ -49,7 +49,7 @@ export default function FAQSection() {
             <div
               key={i}
               className={`bg-white rounded-xl border transition-all duration-200 overflow-hidden ${
-                open === i ? "border-indigo-200 shadow-sm" : "border-slate-200 hover:border-slate-300"
+                open === i ? "border-emerald-200 shadow-sm" : "border-slate-200 hover:border-slate-300"
               }`}
             >
               <button
@@ -57,13 +57,13 @@ export default function FAQSection() {
                 className="w-full flex items-start justify-between px-5 py-4 text-left gap-4 group"
               >
                 <span className={`text-[0.9375rem] font-medium leading-snug transition-colors duration-150 ${
-                  open === i ? "text-indigo-600" : "text-slate-800 group-hover:text-indigo-600"
+                  open === i ? "text-emerald-700" : "text-slate-800 group-hover:text-emerald-700"
                 }`}>
                   {faq.q}
                 </span>
                 <ChevronDown
                   className={`w-4 h-4 shrink-0 mt-0.5 transition-all duration-200 ${
-                    open === i ? "rotate-180 text-indigo-500" : "text-slate-400"
+                    open === i ? "rotate-180 text-emerald-500" : "text-slate-400"
                   }`}
                 />
               </button>

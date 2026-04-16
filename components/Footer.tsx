@@ -23,11 +23,11 @@ export default function Footer() {
         <div className="py-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10">
           <div className="col-span-2 sm:col-span-3 lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center shadow-sm shadow-indigo-900">
+              <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center">
                 <Zap className="w-4 h-4 text-white fill-white" />
               </div>
               <span className="text-[1rem] font-bold text-white">
-                veen<span className="text-indigo-400">ERP</span>
+                veen<span className="text-emerald-400">ERP</span>
               </span>
             </div>
             <p className="text-sm text-slate-500 leading-relaxed max-w-[220px]">
@@ -39,9 +39,9 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition-colors duration-150"
+                  className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition-colors duration-150 group"
                 >
-                  <Icon className="w-3.5 h-3.5 text-slate-500 hover:text-slate-300 transition-colors" />
+                  <Icon className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-300 transition-colors" />
                 </a>
               ))}
             </div>

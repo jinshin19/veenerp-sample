@@ -3,16 +3,14 @@
 import { useState } from "react";
 import { Calculator, ShoppingCart, Users, Factory, Briefcase, Activity } from "lucide-react";
 
-const BRAND = "#4f46e5";
-
 const modules = [
   {
     id: "accounting",
     label: "Accounting",
     icon: Calculator,
-    color: "#4f46e5",
-    bgClass: "bg-indigo-50",
-    textClass: "text-indigo-600",
+    color: "#059669",
+    bgClass: "bg-emerald-50",
+    textClass: "text-emerald-600",
     description: "Full double-entry accounting with automated reconciliation, real-time P&L, and compliance reporting built in.",
     stats: [{ label: "Invoices", value: "2,847" }, { label: "Reconciled", value: "99.8%" }, { label: "Reports", value: "24" }],
     chart: [60, 75, 55, 88, 72, 95, 80, 91],
@@ -26,9 +24,9 @@ const modules = [
     id: "pos",
     label: "Point of Sale",
     icon: ShoppingCart,
-    color: "#059669",
-    bgClass: "bg-emerald-50",
-    textClass: "text-emerald-700",
+    color: "#0d9488",
+    bgClass: "bg-teal-50",
+    textClass: "text-teal-700",
     description: "Lightning-fast POS for retail, restaurants, and multi-location stores with full offline support.",
     stats: [{ label: "Txn/Day", value: "1,204" }, { label: "Avg. Ticket", value: "$48.50" }, { label: "Locations", value: "8" }],
     chart: [40, 55, 80, 70, 90, 85, 78, 95],
@@ -90,7 +88,7 @@ const modules = [
 
 function SectionBadge({ children }: { children: React.ReactNode }) {
   return (
-    <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold tracking-wide">
+    <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold tracking-wide">
       {children}
     </div>
   );
@@ -122,7 +120,7 @@ export default function DashboardPreview() {
                 onClick={() => setActive(mod)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-200 ${
                   isActive
-                    ? "bg-white border-indigo-200 text-indigo-700 shadow-sm"
+                    ? "bg-white border-emerald-200 text-emerald-700 shadow-sm"
                     : "bg-white border-slate-200 text-slate-500 hover:text-slate-800 hover:border-slate-300"
                 }`}
               >
@@ -144,7 +142,6 @@ export default function DashboardPreview() {
               <h3 className="text-[1rem] font-bold text-slate-900 mb-2">{active.label}</h3>
               <p className="text-sm text-slate-500 leading-relaxed">{active.description}</p>
             </div>
-
             <div className="grid grid-cols-3 gap-2">
               {active.stats.map((s) => (
                 <div key={s.label} className="bg-slate-50 rounded-xl p-3 text-center border border-slate-100">
@@ -153,11 +150,10 @@ export default function DashboardPreview() {
                 </div>
               ))}
             </div>
-
             <div className="space-y-2.5">
               {["Live data sync", "Automated workflows", "Custom reporting", "Role-based access"].map((f) => (
                 <div key={f} className="flex items-center gap-2.5 text-sm text-slate-600">
-                  <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
                   {f}
                 </div>
               ))}
@@ -173,28 +169,23 @@ export default function DashboardPreview() {
               </div>
               <span className="text-[11px] text-slate-500 ml-1 font-mono">{active.label} — Live Dashboard</span>
             </div>
-
             <div className="p-4 space-y-3">
               <div className="bg-slate-50 rounded-xl border border-slate-100 p-4">
                 <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-3">Performance Overview</p>
                 <div className="flex items-end gap-1.5" style={{ height: 80 }}>
                   {active.chart.map((h, i) => {
-                    const isLast = i === active.chart.length - 2;
+                    const isHighlight = i === active.chart.length - 2;
                     return (
                       <div key={i} className="flex-1 relative" style={{ height: 80 }}>
                         <div
                           className="absolute bottom-0 left-0 right-0 rounded-t transition-all duration-500"
-                          style={{
-                            height: `${h}%`,
-                            background: isLast ? active.color : `${active.color}60`,
-                          }}
+                          style={{ height: `${h}%`, background: isHighlight ? active.color : `${active.color}60` }}
                         />
                       </div>
                     );
                   })}
                 </div>
               </div>
-
               <div className="space-y-2">
                 {active.items.map((item) => (
                   <div key={item.name} className="flex items-center justify-between px-4 py-3 bg-slate-50 rounded-xl border border-slate-100">
@@ -211,10 +202,9 @@ export default function DashboardPreview() {
                   </div>
                 ))}
               </div>
-
-              <div className="flex items-center gap-2 px-3.5 py-2.5 bg-indigo-50 rounded-xl border border-indigo-100">
-                <Activity className="w-3.5 h-3.5 text-indigo-500 shrink-0" />
-                <span className="text-xs font-medium text-indigo-600">Live data — syncing every 30 seconds</span>
+              <div className="flex items-center gap-2 px-3.5 py-2.5 bg-emerald-50 rounded-xl border border-emerald-100">
+                <Activity className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span className="text-xs font-medium text-emerald-700">Live data — syncing every 30 seconds</span>
               </div>
             </div>
           </div>

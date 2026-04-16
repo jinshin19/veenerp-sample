@@ -7,9 +7,8 @@ const reasons = [
     icon: Layers,
     title: "Centralized Operations",
     description: "Eliminate data silos. Every department — finance, sales, HR, warehouse — works from a single source of truth, reducing errors and improving collaboration.",
-    color: "#4f46e5",
-    bgClass: "bg-indigo-50",
-    textClass: "text-indigo-600",
+    color: "#059669",
+    bgClass: "bg-emerald-50",
   },
   {
     icon: Zap,
@@ -17,23 +16,20 @@ const reasons = [
     description: "From invoice generation to payroll and reorder alerts — veenERP automates repetitive tasks so your team can focus on what moves the business forward.",
     color: "#d97706",
     bgClass: "bg-amber-50",
-    textClass: "text-amber-600",
   },
   {
     icon: BarChart2,
     title: "Real-Time Insights",
     description: "Dashboards, reports, and KPIs update instantly across all modules — no waiting, no guesswork, no reconciling spreadsheets at end of month.",
-    color: "#059669",
-    bgClass: "bg-emerald-50",
-    textClass: "text-emerald-600",
+    color: "#0d9488",
+    bgClass: "bg-teal-50",
   },
   {
     icon: Rocket,
     title: "Built to Scale",
     description: "Whether you have 5 employees or 5,000, veenERP grows with you. Add modules, companies, and users without changing your core system.",
-    color: "#7c3aed",
-    bgClass: "bg-violet-50",
-    textClass: "text-violet-600",
+    color: "#16a34a",
+    bgClass: "bg-green-50",
   },
 ];
 
@@ -51,7 +47,7 @@ export default function WhyVeenERP() {
         <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center">
           <div className="space-y-8">
             <div className="space-y-1">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold tracking-wide mb-4">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold tracking-wide mb-4">
                 Why veenERP
               </div>
               <h2 className="text-[2rem] sm:text-[2.25rem] font-bold text-slate-900 tracking-tight leading-[1.15]">
@@ -63,11 +59,10 @@ export default function WhyVeenERP() {
                 Most businesses lose hours every week reconciling data across disconnected tools. veenERP replaces the patchwork with one unified platform that works the way your business does.
               </p>
             </div>
-
             <div className="grid grid-cols-2 gap-3">
               {stats.map((s) => (
                 <div key={s.label} className="bg-slate-50 rounded-xl p-5 border border-slate-100">
-                  <p className="text-2xl font-extrabold text-indigo-600 tracking-tight">{s.value}</p>
+                  <p className="text-2xl font-extrabold text-emerald-600 tracking-tight">{s.value}</p>
                   <p className="text-sm text-slate-500 mt-1">{s.label}</p>
                 </div>
               ))}
@@ -78,10 +73,7 @@ export default function WhyVeenERP() {
             {reasons.map((r) => {
               const Icon = r.icon;
               return (
-                <div
-                  key={r.title}
-                  className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm card-hover"
-                >
+                <div key={r.title} className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm card-hover">
                   <div className={`w-10 h-10 rounded-xl ${r.bgClass} flex items-center justify-center mb-4`}>
                     <Icon className="w-5 h-5" style={{ color: r.color }} />
                   </div>

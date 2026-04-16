@@ -11,15 +11,14 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center overflow-hidden bg-white pt-16">
       <div className="absolute inset-0 hero-glow" />
       <div className="absolute inset-0 dot-grid opacity-40" />
-
-      <div className="absolute top-24 right-[8%] w-80 h-80 rounded-full bg-indigo-100/60 blur-3xl animate-pulse-slow pointer-events-none" />
-      <div className="absolute bottom-16 left-[3%] w-56 h-56 rounded-full bg-violet-100/50 blur-3xl animate-float-delayed pointer-events-none" />
+      <div className="absolute top-24 right-[8%] w-80 h-80 rounded-full bg-emerald-100/50 blur-3xl animate-pulse-slow pointer-events-none" />
+      <div className="absolute bottom-16 left-[3%] w-56 h-56 rounded-full bg-teal-100/40 blur-3xl animate-float-delayed pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28">
         <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold tracking-wide">
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold tracking-wide">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               Enterprise Resource Planning
             </div>
 
@@ -38,7 +37,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={() => scrollTo("#tour")}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg shadow-md shadow-indigo-200 hover:shadow-lg hover:shadow-indigo-200 transition-all duration-200 hover:-translate-y-px group"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-lg shadow-md shadow-emerald-200 hover:shadow-lg hover:shadow-emerald-200 transition-all duration-200 hover:-translate-y-px group"
               >
                 Book a Free Demo
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -47,8 +46,8 @@ export default function HeroSection() {
                 onClick={() => scrollTo("#modules")}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-slate-50 text-slate-700 text-sm font-semibold rounded-lg border border-slate-200 hover:border-slate-300 transition-all duration-200 group"
               >
-                <span className="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center group-hover:bg-indigo-100 transition-colors">
-                  <Play className="w-2.5 h-2.5 text-indigo-600 fill-indigo-600 ml-0.5" />
+                <span className="w-6 h-6 rounded-full bg-emerald-50 flex items-center justify-center group-hover:bg-emerald-100 transition-colors">
+                  <Play className="w-2.5 h-2.5 text-emerald-600 fill-emerald-600 ml-0.5" />
                 </span>
                 Watch Tour
               </button>
@@ -61,8 +60,8 @@ export default function HeroSection() {
                 { icon: Users, value: "500+", label: "Businesses served" },
               ].map(({ icon: Icon, value, label }) => (
                 <div key={label} className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center shrink-0">
-                    <Icon className="w-4 h-4 text-indigo-600" />
+                  <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center shrink-0">
+                    <Icon className="w-4 h-4 text-emerald-600" />
                   </div>
                   <div>
                     <div className="text-sm font-bold text-slate-900 leading-tight">{value}</div>
@@ -74,8 +73,7 @@ export default function HeroSection() {
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-indigo-50 via-violet-50/50 to-transparent rounded-3xl blur-2xl" />
-
+            <div className="absolute -inset-4 bg-gradient-to-br from-emerald-50 via-teal-50/50 to-transparent rounded-3xl blur-2xl" />
             <div className="relative rounded-2xl shadow-2xl shadow-slate-200 border border-slate-200/80 bg-white overflow-hidden">
               <div className="bg-slate-900 px-4 py-3 flex items-center gap-2.5">
                 <div className="flex gap-1.5">
@@ -91,9 +89,9 @@ export default function HeroSection() {
               <div className="bg-slate-50 p-4 space-y-3">
                 <div className="grid grid-cols-3 gap-2.5">
                   {[
-                    { label: "Revenue", value: "$284.5k", change: "+12.5%", up: true, accent: "text-emerald-600 bg-emerald-50" },
-                    { label: "Orders", value: "1,284", change: "+8.2%", up: true, accent: "text-indigo-600 bg-indigo-50" },
-                    { label: "Invoices", value: "47 open", change: "-3.1%", up: false, accent: "text-amber-600 bg-amber-50" },
+                    { label: "Revenue", value: "$284.5k", change: "+12.5%", accent: "text-emerald-600 bg-emerald-50" },
+                    { label: "Orders", value: "1,284", change: "+8.2%", accent: "text-teal-700 bg-teal-50" },
+                    { label: "Invoices", value: "47 open", change: "-3.1%", accent: "text-amber-600 bg-amber-50" },
                   ].map((s) => (
                     <div key={s.label} className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm">
                       <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1">{s.label}</p>
@@ -115,7 +113,7 @@ export default function HeroSection() {
                           className="absolute bottom-0 left-0 right-0 rounded-t"
                           style={{
                             height: `${h}%`,
-                            background: i === 5 ? "#4f46e5" : i >= 3 ? "#a5b4fc" : "#c7d2fe",
+                            background: i === 5 ? "#059669" : i >= 3 ? "#6ee7b7" : "#a7f3d0",
                           }}
                         />
                       </div>
@@ -133,8 +131,8 @@ export default function HeroSection() {
                   <div className="space-y-2">
                     {[
                       { dot: "bg-emerald-400", text: "Invoice #INV-2847 paid", time: "2m ago" },
-                      { dot: "bg-blue-400", text: "New PO from Supplier Co.", time: "18m ago" },
-                      { dot: "bg-indigo-400", text: "Payroll processed — March", time: "1h ago" },
+                      { dot: "bg-teal-400", text: "New PO from Supplier Co.", time: "18m ago" },
+                      { dot: "bg-emerald-500", text: "Payroll processed — March", time: "1h ago" },
                     ].map((r, i) => (
                       <div key={i} className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
@@ -160,12 +158,12 @@ export default function HeroSection() {
             </div>
 
             <div className="absolute -top-4 -left-4 bg-white rounded-xl border border-slate-100 shadow-lg px-3.5 py-2.5 flex items-center gap-2.5 animate-float-delayed">
-              <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center">
                 <span className="text-sm">⚡</span>
               </div>
               <div>
                 <p className="text-[10px] text-slate-400 font-medium">Automation Active</p>
-                <p className="text-sm font-bold text-indigo-600">14 workflows</p>
+                <p className="text-sm font-bold text-emerald-600">14 workflows</p>
               </div>
             </div>
           </div>
