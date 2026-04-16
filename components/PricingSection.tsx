@@ -1,13 +1,13 @@
 "use client";
 
-import { Check, Star, ArrowRight, Zap } from "lucide-react";
+import { Check, ArrowRight, Zap } from "lucide-react";
 
 const plans = [
   {
     name: "Starter",
     price: "49",
     period: "per user / month",
-    description: "Perfect for small teams getting started with ERP.",
+    description: "For small teams taking their first ERP step.",
     features: ["Up to 5 users", "Accounting & Invoicing", "Basic CRM", "Inventory management", "Standard reports", "Email support"],
     cta: "Get Started",
     highlighted: false,
@@ -16,8 +16,8 @@ const plans = [
     name: "Growth",
     price: "99",
     period: "per user / month",
-    description: "Everything growing businesses need to operate at scale.",
-    features: ["Up to 50 users", "All core ERP modules", "HR & Payroll system", "Manufacturing & POS", "Advanced analytics", "Secure VPS storage", "Multi-company support", "Priority support + SLA"],
+    description: "The complete toolkit for scaling operations.",
+    features: ["Up to 50 users", "All core ERP modules", "HR & Payroll", "Manufacturing & POS", "Advanced analytics", "Secure VPS storage", "Multi-company support", "Priority support + SLA"],
     cta: "Start Free Trial",
     highlighted: true,
     badge: "Most Popular",
@@ -25,9 +25,9 @@ const plans = [
   {
     name: "Enterprise",
     price: null,
-    period: "tailored to your needs",
-    description: "Full-scale ERP for large organizations and enterprises.",
-    features: ["Unlimited users", "All modules + extensions", "Custom integrations", "On-premise or cloud", "Dedicated success manager", "Custom SLA & uptime", "White-labeling", "Security audit & compliance"],
+    period: "tailored to your organization",
+    description: "Full-scale ERP for complex, large organizations.",
+    features: ["Unlimited users", "All modules + extensions", "Custom integrations", "On-premise or cloud", "Dedicated success manager", "Custom SLA & uptime", "White-labeling", "Security & compliance audit"],
     cta: "Talk to Sales",
     highlighted: false,
   },
@@ -39,76 +39,60 @@ export default function PricingSection() {
   };
 
   return (
-    <section id="pricing" className="section-padding bg-white">
+    <section id="pricing" className="section-padding bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="text-center mb-12 space-y-4">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold tracking-wide">
-            Pricing
-          </div>
-          <h2 className="text-[2rem] sm:text-[2.25rem] font-bold text-slate-900 tracking-tight">Simple, transparent pricing</h2>
-          <p className="text-[0.9375rem] text-slate-500 max-w-md mx-auto">
-            No hidden fees, no lock-in. Start small and grow on the same platform.
-          </p>
+        <div className="mb-10">
+          <p className="section-label mb-3">Pricing</p>
+          <h2 className="text-[1.875rem] sm:text-[2.125rem] font-bold text-slate-900 tracking-tight">Simple, transparent pricing</h2>
+          <p className="text-[0.9375rem] text-slate-500 mt-2">No hidden fees. No lock-in. Start small and grow on the same platform.</p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-4 items-stretch">
+        <div className="grid lg:grid-cols-3 border border-slate-200 bg-slate-200 gap-px">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl border flex flex-col transition-all duration-200 ${
-                plan.highlighted
-                  ? "bg-emerald-600 border-emerald-500 shadow-xl shadow-emerald-200/50 lg:-mt-2 lg:-mb-2 z-10"
-                  : "bg-white border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300"
-              }`}
+              className={`relative flex flex-col ${plan.highlighted ? "bg-emerald-700" : "bg-white"}`}
             >
               {plan.badge && (
-                <div className="absolute -top-3.5 inset-x-0 flex justify-center">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white text-emerald-700 text-[11px] font-bold rounded-full shadow-md border border-emerald-100">
-                    <Star className="w-3 h-3 fill-emerald-500 text-emerald-500" />
-                    {plan.badge}
-                  </span>
+                <div className={`absolute top-0 right-0 px-3 py-1 text-[10px] font-bold tracking-wider uppercase ${plan.highlighted ? "bg-emerald-500 text-white" : "bg-emerald-600 text-white"}`}>
+                  {plan.badge}
                 </div>
               )}
 
-              <div className="p-7 pb-5">
-                <p className={`text-xs font-semibold uppercase tracking-widest mb-3 ${plan.highlighted ? "text-emerald-200" : "text-slate-400"}`}>
+              <div className="p-7 pb-5 border-b border-slate-200/30">
+                <p className={`text-[10px] font-semibold uppercase tracking-widest mb-4 ${plan.highlighted ? "text-emerald-200" : "text-slate-400"}`}>
                   {plan.name}
                 </p>
                 <div className="flex items-baseline gap-1 mb-1">
                   {plan.price ? (
                     <>
                       <span className={`text-sm font-medium ${plan.highlighted ? "text-emerald-200" : "text-slate-400"}`}>$</span>
-                      <span className={`text-[2.5rem] font-extrabold tracking-tight ${plan.highlighted ? "text-white" : "text-slate-900"}`}>{plan.price}</span>
+                      <span className={`text-[2.75rem] font-extrabold tracking-tight leading-none ${plan.highlighted ? "text-white" : "text-slate-900"}`}>{plan.price}</span>
                     </>
                   ) : (
-                    <span className={`text-[2rem] font-extrabold tracking-tight ${plan.highlighted ? "text-white" : "text-slate-900"}`}>Custom</span>
+                    <span className={`text-[2rem] font-extrabold tracking-tight leading-none ${plan.highlighted ? "text-white" : "text-slate-900"}`}>Custom</span>
                   )}
                 </div>
-                <p className={`text-xs mb-3 ${plan.highlighted ? "text-emerald-200" : "text-slate-400"}`}>{plan.period}</p>
+                <p className={`text-xs mt-1.5 mb-4 ${plan.highlighted ? "text-emerald-200" : "text-slate-400"}`}>{plan.period}</p>
                 <p className={`text-sm leading-relaxed ${plan.highlighted ? "text-emerald-100" : "text-slate-500"}`}>{plan.description}</p>
               </div>
 
-              <div className="px-7 pb-5 flex-1">
-                <div className={`h-px mb-5 ${plan.highlighted ? "bg-emerald-500" : "bg-slate-100"}`} />
-                <ul className="space-y-3">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-center gap-3">
-                      <div className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${plan.highlighted ? "bg-emerald-500" : "bg-emerald-50"}`}>
-                        <Check className={`w-2.5 h-2.5 ${plan.highlighted ? "text-white" : "text-emerald-600"}`} />
-                      </div>
-                      <span className={`text-sm ${plan.highlighted ? "text-emerald-100" : "text-slate-600"}`}>{f}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="px-7 py-5 flex-1 space-y-2.5">
+                {plan.features.map((f) => (
+                  <div key={f} className="flex items-center gap-3">
+                    <Check className={`w-3.5 h-3.5 shrink-0 ${plan.highlighted ? "text-emerald-300" : "text-emerald-600"}`} />
+                    <span className={`text-sm ${plan.highlighted ? "text-emerald-100" : "text-slate-600"}`}>{f}</span>
+                  </div>
+                ))}
               </div>
 
               <div className="px-7 pb-7">
                 <button
                   onClick={() => scrollTo("#tour")}
-                  className={`w-full py-2.5 rounded-xl font-semibold text-sm transition-all duration-150 flex items-center justify-center gap-2 group ${
+                  className={`w-full py-2.5 font-semibold text-sm transition-colors duration-150 flex items-center justify-center gap-2 group rounded-sm ${
                     plan.highlighted
-                      ? "bg-white text-emerald-700 hover:bg-emerald-50 shadow-sm"
-                      : "bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm shadow-emerald-100"
+                      ? "bg-white text-emerald-700 hover:bg-emerald-50"
+                      : "bg-emerald-600 text-white hover:bg-emerald-700"
                   }`}
                 >
                   {plan.cta}
@@ -119,11 +103,9 @@ export default function PricingSection() {
           ))}
         </div>
 
-        <div className="mt-8 flex justify-center">
-          <div className="inline-flex items-center gap-2.5 px-5 py-3 bg-slate-50 rounded-xl border border-slate-200 text-sm text-slate-500">
-            <Zap className="w-4 h-4 text-emerald-500" />
-            All plans include a <strong className="text-slate-700 font-semibold">14-day free trial</strong> — no credit card required.
-          </div>
+        <div className="mt-5 flex items-center gap-2.5 text-sm text-slate-500">
+          <Zap className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+          All plans include a <strong className="text-slate-700 font-semibold">14-day free trial</strong> — no credit card required.
         </div>
       </div>
     </section>

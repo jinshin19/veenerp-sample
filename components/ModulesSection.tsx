@@ -30,9 +30,9 @@ const extendedModules = [
 
 function ModuleCard({ icon: Icon, label, desc, color, bg }: { icon: React.ElementType; label: string; desc: string; color: string; bg: string }) {
   return (
-    <div className="group bg-white rounded-xl border border-slate-200 p-4 shadow-sm card-hover cursor-default">
-      <div className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-200`}>
-        <Icon className="w-[1.1rem] h-[1.1rem]" style={{ color }} />
+    <div className="group bg-white border border-slate-200 p-4 card-hover cursor-default">
+      <div className={`w-8 h-8 rounded-sm ${bg} flex items-center justify-center mb-3`}>
+        <Icon className="w-4 h-4" style={{ color }} />
       </div>
       <h3 className="text-sm font-semibold text-slate-800 mb-1">{label}</h3>
       <p className="text-xs text-slate-500 leading-relaxed">{desc}</p>
@@ -42,38 +42,35 @@ function ModuleCard({ icon: Icon, label, desc, color, bg }: { icon: React.Elemen
 
 export default function ModulesSection() {
   return (
-    <section id="features" className="section-padding bg-slate-50">
+    <section id="features" className="section-padding bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="text-center mb-12 space-y-4">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold tracking-wide">
-            ERP Capabilities
-          </div>
-          <h2 className="text-[2rem] sm:text-[2.25rem] font-bold text-slate-900 tracking-tight">
-            A module for every part
-            <br className="hidden sm:block" /> of your business
+        <div className="mb-10">
+          <p className="section-label mb-3">ERP Capabilities</p>
+          <h2 className="text-[1.875rem] sm:text-[2.125rem] font-bold text-slate-900 tracking-tight">
+            A module for every part of your business
           </h2>
-          <p className="text-[0.9375rem] text-slate-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-[0.9375rem] text-slate-500 mt-2 max-w-xl leading-relaxed">
             From core operations to extended apps — all integrated, all connected, all in one place.
           </p>
         </div>
 
         <div className="space-y-8">
           <div>
-            <div className="flex items-center gap-3 mb-5">
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest whitespace-nowrap">Core Modules</span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest whitespace-nowrap">Core Modules</span>
               <div className="flex-1 h-px bg-slate-200" />
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-px bg-slate-200 border border-slate-200">
               {coreModules.map((m) => <ModuleCard key={m.label} {...m} />)}
             </div>
           </div>
 
           <div>
-            <div className="flex items-center gap-3 mb-5">
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest whitespace-nowrap">Extended Apps</span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest whitespace-nowrap">Extended Apps</span>
               <div className="flex-1 h-px bg-slate-200" />
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-px bg-slate-200 border border-slate-200">
               {extendedModules.map((m) => <ModuleCard key={m.label} {...m} />)}
             </div>
           </div>

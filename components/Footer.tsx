@@ -18,20 +18,20 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-white">
+    <footer className="bg-[#0c1923] text-white">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="py-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10">
+        <div className="py-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10 border-b border-slate-800">
           <div className="col-span-2 sm:col-span-3 lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white fill-white" />
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded bg-emerald-600 flex items-center justify-center shrink-0">
+                <Zap className="w-3.5 h-3.5 text-white fill-white" />
               </div>
-              <span className="text-[1rem] font-bold text-white">
+              <span className="text-[0.9375rem] font-bold text-white">
                 veen<span className="text-emerald-400">ERP</span>
               </span>
             </div>
             <p className="text-sm text-slate-500 leading-relaxed max-w-[220px]">
-              The all-in-one ERP platform built for modern businesses. Streamline operations, automate workflows, and grow without limits.
+              The enterprise resource planning platform built for modern, growing businesses.
             </p>
             <div className="flex gap-2">
               {socials.map(({ icon: Icon, href, label }) => (
@@ -39,9 +39,9 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition-colors duration-150 group"
+                  className="w-7 h-7 border border-slate-700 hover:border-slate-600 flex items-center justify-center transition-colors duration-150 group"
                 >
-                  <Icon className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-300 transition-colors" />
+                  <Icon className="w-3 h-3 text-slate-500 group-hover:text-slate-300 transition-colors" />
                 </a>
               ))}
             </div>
@@ -49,7 +49,7 @@ export default function Footer() {
 
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category} className="space-y-3">
-              <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-widest">{category}</h4>
+              <h4 className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest">{category}</h4>
               <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link}>
@@ -63,7 +63,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-slate-800 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs text-slate-600">
             © {new Date().getFullYear()} veenERP. All rights reserved.
           </p>

@@ -4,14 +4,15 @@ import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-inter",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "veenERP — The All-in-One ERP Platform for Growing Businesses",
+  title: "veenERP — Enterprise Resource Planning for Modern Business",
   description:
-    "Automate operations, streamline workflows, and gain real-time insights with veenERP. The modern, modular ERP platform trusted by businesses worldwide.",
+    "Automate operations, streamline workflows, and gain real-time insights with veenERP. The modular ERP platform trusted by 500+ businesses worldwide.",
   keywords: [
     "ERP",
     "enterprise resource planning",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     "business automation",
   ],
   openGraph: {
-    title: "veenERP — The All-in-One ERP Platform",
+    title: "veenERP — Enterprise Resource Planning",
     description: "Automate operations, streamline workflows, and gain real-time insights.",
     type: "website",
   },
@@ -36,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} font-sans antialiased`}>{children}</body>
     </html>
   );
 }
