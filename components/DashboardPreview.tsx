@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import {
-  Calculator, ShoppingCart, Users, Factory, Briefcase, Package,
-  Star, TrendingUp, Clock, Activity
+  Calculator, ShoppingCart, Users, Factory, Briefcase,
+  Star, Activity
 } from "lucide-react";
 
 const modules = [
@@ -102,7 +102,7 @@ const modules = [
     icon: Briefcase,
     color: "#8b5cf6",
     bg: "bg-violet-50",
-    description: "Complete human resources management including payroll, attendance, recruitment, and performance reviews.",
+    description: "Complete HR management including payroll, attendance, recruitment, and performance reviews.",
     stats: [
       { label: "Employees", value: "248" },
       { label: "Attendance", value: "97.2%" },
@@ -124,21 +124,21 @@ export default function DashboardPreview() {
   const [active, setActive] = useState(modules[0]);
 
   return (
-    <section id="modules" className="section-padding bg-[#f8f8fc]">
+    <section id="modules" className="section-padding bg-[#f7f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-4 mb-14">
-          <Badge variant="secondary" className="rounded-full px-4 py-1.5 text-xs font-semibold text-[#5b5ef4] bg-[#eeeeff] border-0">
+        <div className="text-center space-y-3 mb-12">
+          <Badge className="rounded-full px-3 py-1 text-[0.7rem] font-semibold text-[#5b5ef4] bg-[#eeeeff] border-0 shadow-none">
             Interactive Preview
           </Badge>
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
+          <h2 className="text-3xl sm:text-[2.25rem] font-bold text-foreground tracking-tight">
             Every module, one platform
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm text-muted-foreground max-w-xl mx-auto leading-relaxed">
             Explore how veenERP handles your core business operations — all connected, all real-time.
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
           {modules.map((mod) => {
             const Icon = mod.icon;
             const isActive = active.id === mod.id;
@@ -146,14 +146,14 @@ export default function DashboardPreview() {
               <button
                 key={mod.id}
                 onClick={() => setActive(mod)}
-                className={`flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-sm font-semibold border transition-all duration-200 ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-[0.8125rem] font-medium border transition-all duration-200 ${
                   isActive
-                    ? "bg-white border-[#5b5ef4]/30 text-[#5b5ef4] shadow-md shadow-[#5b5ef4]/10"
-                    : "bg-white border-border text-muted-foreground hover:text-foreground hover:border-border/80 hover:shadow-sm"
+                    ? "bg-white border-[#5b5ef4]/25 text-[#5b5ef4] shadow-sm"
+                    : "bg-white border-border/60 text-muted-foreground hover:text-foreground hover:border-border hover:shadow-sm"
                 }`}
               >
-                <span className={`w-6 h-6 rounded-md flex items-center justify-center ${isActive ? mod.bg : "bg-secondary"}`}>
-                  <Icon className="w-3.5 h-3.5" style={{ color: isActive ? mod.color : undefined }} />
+                <span className={`w-5 h-5 rounded flex items-center justify-center ${isActive ? mod.bg : "bg-[#f7f7fb]"}`}>
+                  <Icon className="w-3 h-3" style={{ color: isActive ? mod.color : "currentColor" }} />
                 </span>
                 {mod.label}
               </button>
@@ -161,35 +161,30 @@ export default function DashboardPreview() {
           })}
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-6 transition-all duration-300">
-          <div className="lg:col-span-2 bg-white rounded-2xl border border-border/60 shadow-sm p-6 space-y-6">
+        <div className="grid lg:grid-cols-5 gap-4">
+          <div className="lg:col-span-2 bg-white rounded-2xl border border-border/60 shadow-sm p-6 space-y-5">
             <div>
-              <div className={`w-12 h-12 rounded-xl ${active.bg} flex items-center justify-center mb-4`}>
-                {(() => { const Icon = active.icon; return <Icon className="w-6 h-6" style={{ color: active.color }} />; })()}
+              <div className={`w-10 h-10 rounded-xl ${active.bg} flex items-center justify-center mb-4`}>
+                {(() => { const Icon = active.icon; return <Icon className="w-5 h-5" style={{ color: active.color }} />; })()}
               </div>
-              <h3 className="text-xl font-bold text-foreground">{active.label} Module</h3>
-              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{active.description}</p>
+              <h3 className="text-base font-bold text-foreground">{active.label} Module</h3>
+              <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{active.description}</p>
             </div>
 
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-2">
               {active.stats.map((stat) => (
-                <div key={stat.label} className="bg-[#f8f8fc] rounded-xl p-3 text-center">
-                  <p className="text-lg font-bold text-foreground">{stat.value}</p>
-                  <p className="text-[10px] text-muted-foreground mt-0.5 leading-tight">{stat.label}</p>
+                <div key={stat.label} className="bg-[#f7f7fb] rounded-xl p-3 text-center border border-border/40">
+                  <p className="text-sm font-bold text-foreground">{stat.value}</p>
+                  <p className="text-[9px] text-muted-foreground mt-0.5 leading-tight">{stat.label}</p>
                 </div>
               ))}
             </div>
 
             <div className="space-y-2">
-              {[
-                "Real-time data sync",
-                "Automated workflows",
-                "Advanced reporting",
-                "Role-based access",
-              ].map((f) => (
-                <div key={f} className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                  <div className="w-4 h-4 rounded-full bg-[#eeeeff] flex items-center justify-center flex-shrink-0">
-                    <Star className="w-2.5 h-2.5 text-[#5b5ef4] fill-[#5b5ef4]" />
+              {["Real-time data sync", "Automated workflows", "Advanced reporting", "Role-based access"].map((f) => (
+                <div key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#eeeeff] flex items-center justify-center shrink-0">
+                    <Star className="w-2 h-2 text-[#5b5ef4] fill-[#5b5ef4]" />
                   </div>
                   {f}
                 </div>
@@ -198,51 +193,47 @@ export default function DashboardPreview() {
           </div>
 
           <div className="lg:col-span-3 bg-white rounded-2xl border border-border/60 shadow-sm overflow-hidden">
-            <div className="bg-[#0e0e14] px-5 py-3 flex items-center gap-2.5">
+            <div className="bg-[#111118] px-4 py-3 flex items-center gap-2">
               <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-                <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
               </div>
-              <span className="text-xs text-gray-500 ml-1">{active.preview.title}</span>
+              <span className="text-[10px] text-white/40 ml-1 font-mono">{active.preview.title}</span>
             </div>
 
-            <div className="p-5 space-y-4">
-              <div className="bg-[#f8f8fc] rounded-xl p-4">
-                <div className="flex items-end gap-1.5 h-24">
-                  {active.preview.chart.map((h, i) => (
-                    <div key={i} className="flex-1 flex flex-col justify-end">
-                      <div
-                        className="w-full rounded-t-sm transition-all duration-500"
-                        style={{
-                          height: `${h}%`,
-                          background: i === active.preview.chart.length - 2
-                            ? active.color
-                            : `${active.color}30`,
-                        }}
-                      />
-                    </div>
-                  ))}
+            <div className="p-4 space-y-3">
+              <div className="bg-[#f7f7fb] rounded-xl p-4">
+                <div className="flex items-end gap-1" style={{ height: 80 }}>
+                  {active.preview.chart.map((h, i) => {
+                    const isHighlight = i === active.preview.chart.length - 2;
+                    return (
+                      <div key={i} className="flex-1 relative" style={{ height: 80 }}>
+                        <div
+                          className="absolute bottom-0 left-0 right-0 rounded-t transition-all duration-500"
+                          style={{
+                            height: `${h}%`,
+                            background: isHighlight
+                              ? active.color
+                              : `${active.color}70`,
+                          }}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
-              <div className="space-y-2.5">
+              <div className="space-y-2">
                 {active.preview.items.map((item) => (
-                  <div key={item.name} className="flex items-center justify-between p-3.5 bg-[#f8f8fc] rounded-xl">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="w-2 h-2 rounded-full"
-                        style={{ background: active.color }}
-                      />
+                  <div key={item.name} className="flex items-center justify-between px-3.5 py-3 bg-[#f7f7fb] rounded-xl border border-border/40">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: active.color }} />
                       <span className="text-sm font-medium text-foreground">{item.name}</span>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2.5">
                       <span className="text-sm font-bold text-foreground">{item.amount}</span>
-                      <span
-                        className={`text-xs font-semibold px-2 py-0.5 rounded-lg ${
-                          item.up ? "bg-green-50 text-green-600" : "bg-red-50 text-red-600"
-                        }`}
-                      >
+                      <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-md ${item.up ? "bg-emerald-50 text-emerald-600" : "bg-red-50 text-red-500"}`}>
                         {item.trend}
                       </span>
                     </div>
@@ -250,9 +241,9 @@ export default function DashboardPreview() {
                 ))}
               </div>
 
-              <div className="flex items-center gap-2 p-3 bg-[#eeeeff] rounded-xl">
-                <Activity className="w-4 h-4 text-[#5b5ef4]" />
-                <span className="text-xs font-medium text-[#5b5ef4]">Live data — updated every 30 seconds</span>
+              <div className="flex items-center gap-2 px-3 py-2.5 bg-[#eeeeff]/60 rounded-xl">
+                <Activity className="w-3.5 h-3.5 text-[#5b5ef4] shrink-0" />
+                <span className="text-[10px] font-medium text-[#5b5ef4]">Live data — updated every 30 seconds</span>
               </div>
             </div>
           </div>
