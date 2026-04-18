@@ -1,12 +1,10 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import DashboardPreview from "@/components/DashboardPreview";
-import WhyVeenERP from "@/components/WhyVeenERP";
-import ModulesSection from "@/components/ModulesSection";
-import ExploreFeatures from "@/components/ExploreFeatures";
+import ProblemsSection from "@/components/ProblemsSection";
+import ModuleFeaturesSection from "@/components/ModuleFeaturesSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
-import PricingSection from "@/components/PricingSection";
-import TourSection from "@/components/TourSection";
+import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -15,13 +13,11 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <DashboardPreview />
-      <WhyVeenERP />
-      <ModulesSection />
-      <ExploreFeatures />
-      <PricingSection />
+      <ProblemsSection />
+      <ModuleFeaturesSection />
+      <TestimonialsSection />
       <FAQSection />
-      <TourSection />
+      <CTASection />
       <Footer />
       <ScrollToTop />
     </main>
