@@ -1,7 +1,23 @@
 {
   "name": "veenerp",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Enterprise Resource Planning platform built for modern, growing businesses. Features comprehensive organizational structure, HR, CRM, task, finance, and warehouse management.",
+  "author": "veenERP Team",
   "private": true,
+  "license": "UNLICENSED",
+  "keywords": [
+    "erp",
+    "saas",
+    "enterprise",
+    "business-management",
+    "crm",
+    "hr",
+    "finance",
+    "warehouse",
+    "lms",
+    "nextjs",
+    "react"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
